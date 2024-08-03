@@ -37,10 +37,10 @@
                         I've also provided music and SFX for various game jams: <a href="https://vaiaman.itch.io/fuel-burning-ii">Fuel Burning II</a>, <a href="https://keimo.itch.io/abyssal-ambush">Abyssal Ambush</a>, <a href="https://keimo.itch.io/liquid-leap">Liquid Leap</a>, to name the most recent ones. Next to composition and sound design, I implement audio routines in Game Engines like Unreal Engine 4, Unity and Godot.
                     </p>
                     <p>
-                        Apart from working on games, I've also released <b>a game music pack</b> together with Harvey Carman, <b>three EPs, two solo albums, and three collab albums</b> together with GerCR, dubbed our <a href="https://voidsquared.bandcamp.com/">Void²</a> project.</p><p>In addition, I perform as concert master, solo Bb and Eb clarinettist for the town orchestra of Wilhelmsburg and organise sectional rehearsals.
+                        Apart from working on games, I've released <b>a game music pack</b> together with Harvey Carman, <b>three EPs, two solo albums, and three collab albums</b> together with GerCR, dubbed our <a href="https://voidsquared.bandcamp.com/">Void²</a> project.</p><p>In addition, I perform as concert master, solo Bb and Eb clarinettist for the town orchestra of Wilhelmsburg and organise sectional rehearsals.
                     </p>
             </section>
-
+            
             <section id="games" class="games">
                 <center>
                 <div style="margin: auto" width="1500">
@@ -50,7 +50,6 @@
                 </center>
                 <center>
                 <div style="margin: auto">
-                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/ZWyUSp7DTTc?si=aILdE2DIO6Sw0KZr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
                     <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1727205"><a href="https://vaiaman.itch.io/spoopy-music">Spoopy Music - VaiaMan&#039;s Spooky Loop Pack by Vaia, Harvey Carman</a></iframe>
                     <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2720996"><a href="https://keimo.itch.io/liquid-leap">Liquid Leap by Keimo, Vaia</a></iframe>
                     <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2395037" ><a href="https://keimo.itch.io/abyssal-ambush">Abyssal Ambush by Keimo, Vaia, JonsP</a></iframe>
@@ -325,41 +324,14 @@
                 };
 
                 function togglePlayPause(button, wavesurfer) {
-                    if (wavesurfer.isPlaying()) {
-                        wavesurfer.pause();
-                        button.classList.remove('playing');
-                    } else {
-                        wavesurfer.play();
-                        button.classList.add('playing');
-                    }
+                   if (wavesurfer.isPlaying()) {
+                       wavesurfer.pause();
+                       button.classList.remove('playing');
+                   } else {
+                       wavesurfer.play();
+                       button.classList.add('playing');
+                   }
                 }
-
-                /*
-                function createPortfolioItem(title, description, waveformId, trackUrl, waveColor, progressColor) {
-                    const itemHTML = `
-                        <div class="portfolio-item">
-                            <h4>${title}</h4>
-                            <p>${description}</p>
-                            <div id="${waveformId}" class="waveform"></div>
-                            <button class="play-btn" onclick="togglePlayPause(this, ${waveformId})">
-                                <i class="fas fa-play play-icon"></i>
-                                <i class="fas fa-pause pause-icon"></i>
-                            </button>
-                        </div>
-                    `;
-
-                    // Insert the HTML into the DOM
-                    document.getElementById(waveformId).innerHTML = itemHTML;
-
-                    // Create and initialize the WaveSurfer instance
-                    const wavesurferInstance = createWaveSurfer(`#${waveformId}`, trackUrl, waveColor, progressColor);
-
-                    // Assign the created instance to a global variable
-                    window[waveformId.replace('waveform', 'wavesurfer')] = wavesurferInstance;
-
-                    return itemHTML;
-                }*/
-
 
                 // Add event listeners to buttons
                 document.querySelectorAll('.play-btn').forEach(button => {
@@ -422,20 +394,44 @@
                 const waveformCollab2 = createWaveSurfer('#waveformCollab2', 'assets/FriendshipStrikesBack.mp3', waveformColorCollab, progressColorCollab); // Collaborations
                 const waveformCollab3 = createWaveSurfer('#waveformCollab3', 'assets/MemoryLane.mp3', waveformColorCollab, progressColorCollab); // Collaborations
 
+
+                /*
+                function createPortfolioItem(title, description, waveformId, trackUrl, waveColor, progressColor) {
+                    const itemHTML = `
+                        <div class="portfolio-item">
+                            <h4>${title}</h4>
+                            <p>${description}</p>
+                            <div id="${waveformId}" class="waveform"></div>
+                            <button class="play-btn" onclick="togglePlayPause(this, ${waveformId})">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                    `;
+
+                    // Insert the HTML into the DOM
+                    document.getElementById(waveformId).innerHTML = itemHTML;
+
+                    // Create and initialize the WaveSurfer instance
+                    const wavesurferInstance = createWaveSurfer(`#${waveformId}`, trackUrl, waveColor, progressColor);
+
+                    // Assign the created instance to a global variable
+                    window[waveformId.replace('waveform', 'wavesurfer')] = wavesurferInstance;
+
+                    return itemHTML;
+                }*/
                 </script>
             </section>
-            
-
         </div>
     </div>
 
 
     <footer>
         <div class="social-links">
-            <a href="https://x.com/VaiaVGM" target="_blank">X (Twitter)</a>
             <a href="https://vaiavgm.bandcamp.com" target="_blank">Bandcamp</a>
             <a href="https://soundcloud.com/vaiavgm" target="_blank">SoundCloud</a>
             <a href="https://github.com/vaiavgm" target="_blank">GitHub</a>
+            <a href="https://x.com/VaiaVGM" target="_blank">X (Twitter)</a>
         </div>
         <p>&copy; 2024 Eduard Pranz. All rights reserved.</p>
     </footer>
