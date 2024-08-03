@@ -1,55 +1,443 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Eduard Pranz - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduard 'Vaia' Pranz - Game Music Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+</head>
+<body>
     <header>
-      <div class="header-container">
-        <h1 class="name">
-          <a href="index.html">Eduard Pranz</a>
-        </h1>
-        <a href="index.html">
-          <div class="portrait">
-            <img src="assets/portrait.jpg" alt="Portrait">
-          </div>
-        </a>
+        <div class="header-content">
+            <img src="images/portrait.jpg" alt="Portrait" class="portrait"/>
+            <h1>Eduard 'Vaia' Pranz - Game Music Portfolio</h1>
+            <img src="images/logo.png" alt="Logo" class="logo"/>
+        </div>
         <nav>
-          <ul>
-            <div>
-              <li>
-                <a href="music.html">Music</a>
-              </li>
-              <li>
-                <a href="games.html">Games</a>
-              </li>
-            </div>
-            <div>
-              <li>
-                <a href="tools.html">Tools</a>
-              </li>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-            </div>
-          </ul>
+            <a href="#bio">About me</a>
+            <!--<a href="#portfolio">Portfolio</a>
+            <a href="#services">Services</a>-->
+            <a href="#contact">Contact</a>
         </nav>
-      </div>
     </header>
-    <main>
-      <h1>>> Tech-enthusiast</h1>
-      <p>I am deeply enthusiastic about technology due to the limitless possibilities it offers. Computers are incredible tools that can be leveraged in countless ways, and I am particularly drawn to the ability to transform ideas and concepts into tangible reality through technology.</p>
-      <h1>>> Musician</h1>
-      <p>With over 400 tracks released so far, including OSTs, music packs, EPs, and entire albums, I excel in chiptune, EDM-style synth compositions, and orchestral music. I also love using retro soundfonts to compose music in the style of N64, PS2, and others. <br />
-        <br /> I have been playing the clarinet since my permanent teeth were able to hold the mouthpiece. I have composed various pieces of music, including duos for the clarinet and scores for my hometown's orchestra where I play first desk Bb clarinet and Eb for extra color. <br />
-        <br /> During my musical journey, I also collaborated with other composers on VGM projects, like <u>Harvey Carman</u>, <u>Jeff Heim</u> and <u>GerCR</u>, playing to our strengths.
-      </p>
-      <h1>>> Programmer &amp; Inventor</h1>
-      <p>I use my programming skills to build audio plugins (VST) with C++ and the open-source iPlug2 Framework, allowing me to shape sounds and music precisely to my liking. My passion for making things easier and more efficient has also led me to repair numerous items using 3D printing techniques. I have also created a light-sensitive hardware synthesizer, and a kitchen timer with configurable melodies using Arduino microcontrollers. Furthermore, I have programmed LCD matrix games with the same chipset and all its limitations, such as a two-player co-op airplane vs. dinosaur shooter and classics like Pong. </p>
-      <h1>>> Gamer</h1>
-      <p>I thrive on challenges, which is why I enjoy playing games on hard mode. Whether I'm strategizing in Age of Empires II, Into the Breach and Stellaris, or engaging in intense shooter battles in Overwatch 2, Team Fortress 2 and Borderlands, I love the rush of pushing myself to the limit. As much as I enjoy the challenge of games, I also have a deep appreciation for their soundtracks. Before streaming was a thing, I often found myself starting up games just to listen to the music, even if I didn't have time to play.</p>
-    </main>
-  </body>
+
+
+    <div class="main-container">
+        <div class="container">
+            <section id="bio" class="bio">
+                <h2>About me</h2>
+                    <p>
+                        With over a decade of experience in music composition, I have created over 500 tracks, with my music featured in commercial games, such as <a href="https://store.steampowered.com/app/1501790/Forge_Squad/">Forge Squad</a>, <a href="https://store.steampowered.com/app/1540480/The_Bar_Fight_VR/">The Bar Fight VR</a> and <a href="https://x.com/i/web/status/823342318212104192">Gembryo</a>. My passion for chiptune and retro game music drives my creative process, ensuring each piece resonates with nostalgia and modern innovation.
+                    </p>
+                    <p>
+                        I've also provided music and SFX for various game jams: <a href="https://vaiaman.itch.io/fuel-burning-ii">Fuel Burning II</a>, <a href="https://keimo.itch.io/abyssal-ambush">Abyssal Ambush</a>, <a href="https://keimo.itch.io/liquid-leap">Liquid Leap</a>, to name the most recent ones. Next to composition and sound design, I implement audio routines in Game Engines like Unreal Engine 4, Unity and Godot.
+                    </p>
+                    <p>
+                        Apart from working on games, I've also released <b>a game music pack</b> together with Harvey Carman, <b>three EPs, two solo albums, and three collab albums</b> together with GerCR, dubbed our <a href="https://voidsquared.bandcamp.com/">Void²</a> project.</p><p>In addition, I perform as concert master, solo Bb and Eb clarinettist for the town orchestra of Wilhelmsburg and organise sectional rehearsals.
+                    </p>
+            </section>
+
+            <section id="games" class="games">
+                <center>
+                <div style="margin: auto" width="1500">
+                    <iframe style="display: inline" src="https://store.steampowered.com/widget/1501790/" frameborder="0" width="646" height="190"></iframe>
+                    <iframe style="display: inline" src="https://store.steampowered.com/widget/1540480/" frameborder="0" width="646" height="190"></iframe>
+                </div>
+                </center>
+                <center>
+                <div style="margin: auto">
+                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/ZWyUSp7DTTc?si=aILdE2DIO6Sw0KZr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1727205"><a href="https://vaiaman.itch.io/spoopy-music">Spoopy Music - VaiaMan&#039;s Spooky Loop Pack by Vaia, Harvey Carman</a></iframe>
+                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2720996"><a href="https://keimo.itch.io/liquid-leap">Liquid Leap by Keimo, Vaia</a></iframe>
+                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2395037" ><a href="https://keimo.itch.io/abyssal-ambush">Abyssal Ambush by Keimo, Vaia, JonsP</a></iframe>
+                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2432609"><a href="https://vaiaman.itch.io/fuel-burning-ii">Fuel Burning II by Vaia, Harvey Carman, Tab</a></iframe>
+                </div>
+                <center>
+            </section>
+            
+            <section id="portfolio" class="portfolio">
+                <h2>Portfolio</h2>
+                
+                
+                
+                <h3 class="chiptune">Chiptune</h3>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>War of the Titans</h4>
+                        <div id="waveformChip3" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip3)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Kombinator</h4>
+                        <div id="waveformChip1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Scratch Tickets</h4>
+                        <p>The DPCM was done with my self made sampler</p>
+                        <div id="waveformChip2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Leeway</h4>
+                        <p>A journey though a multitude of NES composition styles</p>
+                        <div id="waveformChip4" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip4)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-row">
+
+                    <div class="portfolio-item">
+                        <h4>Photon</h4>
+                        <p>SEGA Genesis remix of the Temporat OST</p>
+                        <div id="waveformChip6" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip6)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+
+                        <h4>The Hub</h4>
+                        <p>SEGA Genesis remix of the Temporat OST</p>
+                        <div id="waveformChip7" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformChip7)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <h3 class="dungeon-midi">Dungeon MIDI</h3>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Treasure Hall</h4>
+                        <div id="waveformDMIDI1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformDMIDI1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Perseverance</h4>
+                        <div id="waveformDMIDI2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformDMIDI2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Desecrated Hallows</h4>
+                        <div id="waveformDMIDI3" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformDMIDI3)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Daylight</h4>
+                        <div id="waveformDMIDI4" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformDMIDI4)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <h3 class="one-bit">1-bit Music</h3>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                            <h4>Specter</h4>
+                            <p style="min-height: 50px;" >I find it fascinating how modulating the pulse-width makes the waveform display show different levels of volume. It's only on/off after all!</p>
+                            <div id="waveformBIT4" class="waveform"></div>
+                            <button class="play-btn" onclick="togglePlayPause(this, waveformBIT4)">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Corruption</h4>
+                        <p style="min-height: 50px;" >Made with an earlier version of my <a href="https://github.com/vaiavgm/OneBitPlus">1-bit VSTi</a></p>
+                        <div id="waveformBIT1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformBIT1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Flutter</h4>
+                        <div id="waveformBIT3" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformBIT3)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Mono</h4>
+                        <div id="waveformBIT2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformBIT2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                 
+                
+                <h3 class="orchestral">Orchestral / Ensemble</h3>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Danaide ft. Markus Pranz</h4>
+                        <p>Real-life recording with my brother on the guitar.</p>
+                        <div id="waveformOST1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformOST1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Rainforest</h4>
+                        <p>A blend of synth animal sounds, a river, and a small ensemble.</p>
+                        <div id="waveformOST2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformOST2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                                    
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Snow and Ice</h4>
+                        <p>A frosty, windy environment on the top of a mountain.</p>
+                        <div id="waveformOST3" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformOST3)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Tanunia</h4>
+                        <p style="min-height: 50px;">Once I've learned how to conduct an orchestra, this will be a strong contender for Wilhelmsburg</p>
+                        <div id="waveformOrch1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformOrch1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Nightly Treasure Mischief</h4>
+                        <p style="min-height: 50px;">Nyx is still up after sundown, exploring on her own. Inspired by my DnD group.</p>
+                        <div id="waveformOrch2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformOrch2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                
+                
+                <h3 class="collaborations">Collaborations</h3>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Search for Life ft. GerCR</h4>
+                        <p style="min-height: 50px;">Gerson on drums and guitar, me on the synths and SFX.</p>
+                        <div id="waveformCollab1" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformCollab1)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>Friendship Strikes Back ft. Entoen</h4>
+                        <p style="min-height: 50px;">We passed the baton a lot with both of us playing some synths, some chiptune and some drums.</p>
+                        <div id="waveformCollab2" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformCollab2)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-row">
+                    <div class="portfolio-item">
+                        <h4>Memory Lane ft. GerCR</h4>
+                        <p>Gerson on the guitar, me on the clari, both of us added some digital instruments and SFX.</p>
+                        <div id="waveformCollab3" class="waveform"></div>
+                        <button class="play-btn" onclick="togglePlayPause(this, waveformCollab3)">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <script>
+                
+                const createWaveSurfer = (containerId, trackUrl, waveColor, progressColor) => {
+                    const wavesurfer = WaveSurfer.create({
+                        container: containerId,
+                        waveColor: waveColor,
+                        progressColor: progressColor
+                    });
+                    wavesurfer.load(trackUrl);
+                    return wavesurfer;        
+                };
+
+                function togglePlayPause(button, wavesurfer) {
+                    if (wavesurfer.isPlaying()) {
+                        wavesurfer.pause();
+                        button.classList.remove('playing');
+                    } else {
+                        wavesurfer.play();
+                        button.classList.add('playing');
+                    }
+                }
+
+                /*
+                function createPortfolioItem(title, description, waveformId, trackUrl, waveColor, progressColor) {
+                    const itemHTML = `
+                        <div class="portfolio-item">
+                            <h4>${title}</h4>
+                            <p>${description}</p>
+                            <div id="${waveformId}" class="waveform"></div>
+                            <button class="play-btn" onclick="togglePlayPause(this, ${waveformId})">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                    `;
+
+                    // Insert the HTML into the DOM
+                    document.getElementById(waveformId).innerHTML = itemHTML;
+
+                    // Create and initialize the WaveSurfer instance
+                    const wavesurferInstance = createWaveSurfer(`#${waveformId}`, trackUrl, waveColor, progressColor);
+
+                    // Assign the created instance to a global variable
+                    window[waveformId.replace('waveform', 'wavesurfer')] = wavesurferInstance;
+
+                    return itemHTML;
+                }*/
+
+
+                // Add event listeners to buttons
+                document.querySelectorAll('.play-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const waveformId = button.parentElement.querySelector('.waveform').id;
+                        const wavesurfer = window[waveformId];
+                        if (wavesurfer) {
+                            togglePlayPause(button, wavesurfer);
+                        } else {
+                            console.error('WaveSurfer instance not found for', waveformId);
+                        }
+                    });
+                });
+
+
+                const waveformColorOrch = "#009d8a"
+                const progressColorOrch = "#007f6d"
+
+                const waveformColorChip = "#5a0a82"
+                const progressColorChip = "#4a0a66"
+
+                const waveformColorOST = waveformColorOrch
+                const progressColorOST = progressColorOrch
+
+                const waveformColorDMIDI = "#e38c12"
+                const progressColorDMIDI = "#c77a10"
+
+                const waveformColorBIT = "#8bb1c3"
+                const progressColorBIT = "#6a8aa8"
+
+                const waveformColorCollab = "#cf2a3d"
+                const progressColorCollab = "#b62836"
+
+                const waveformOST1 = createWaveSurfer('#waveformOST1', 'assets/Danaide.mp3', waveformColorOST, progressColorOST); // OST
+                const waveformOST2 = createWaveSurfer('#waveformOST2', 'assets/Rainforest.mp3', waveformColorOST, progressColorOST); // OST
+                const waveformOST3 = createWaveSurfer('#waveformOST3', 'assets/SnowandIce.mp3', waveformColorOST, progressColorOST); // OST
+
+                const waveformChip1 = createWaveSurfer('#waveformChip1', 'assets/Kombinator.mp3', waveformColorChip, progressColorChip); // Chiptune
+                const waveformChip2 = createWaveSurfer('#waveformChip2', 'assets/ScratchTickets.mp3', waveformColorChip, progressColorChip); // Chiptune
+                const waveformChip3 = createWaveSurfer('#waveformChip3', 'assets/WaroftheTitans.mp3', waveformColorChip, progressColorChip); // Chiptune
+                const waveformChip4 = createWaveSurfer('#waveformChip4', 'assets/Leeway.mp3', waveformColorChip, progressColorChip); // Chiptune
+                //const waveformChip5 = createWaveSurfer('#waveformChip5', 'assets/Unfolding.mp3', waveformColorChip, progressColorChip); // Chiptune
+                const waveformChip6 = createWaveSurfer('#waveformChip6', 'assets/Photon.mp3', waveformColorChip, progressColorChip); // Chiptune
+                const waveformChip7 = createWaveSurfer('#waveformChip7', 'assets/TheHub.mp3', waveformColorChip, progressColorChip); // Chiptune
+
+                const waveformOrch1 = createWaveSurfer('#waveformOrch1', 'assets/Tanunia.mp3', waveformColorOrch, progressColorOrch); // Orchestral
+                const waveformOrch2 = createWaveSurfer('#waveformOrch2', 'assets/NightlyTreasureMischief.mp3', waveformColorOrch, progressColorOrch); // Orchestral
+
+                const waveformDMIDI1 = createWaveSurfer('#waveformDMIDI1', 'assets/TreasureHall.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+                const waveformDMIDI2 = createWaveSurfer('#waveformDMIDI2', 'assets/Perseverance.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+                const waveformDMIDI3 = createWaveSurfer('#waveformDMIDI3', 'assets/DesecratedHallows.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+                const waveformDMIDI4 = createWaveSurfer('#waveformDMIDI4', 'assets/Daylight.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+
+                const waveformBIT1 = createWaveSurfer('#waveformBIT1', 'assets/Corruption.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+                const waveformBIT2 = createWaveSurfer('#waveformBIT2', 'assets/Mono.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+                const waveformBIT3 = createWaveSurfer('#waveformBIT3', 'assets/Flutter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+                const waveformBIT4 = createWaveSurfer('#waveformBIT4', 'assets/Specter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+
+                const waveformCollab1 = createWaveSurfer('#waveformCollab1', 'assets/SearchforLife.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+                const waveformCollab2 = createWaveSurfer('#waveformCollab2', 'assets/FriendshipStrikesBack.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+                const waveformCollab3 = createWaveSurfer('#waveformCollab3', 'assets/MemoryLane.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+
+                </script>
+            </section>
+            
+
+            <section id="contact" class="contact">
+                <h2>Contact</h2>
+                <p>For inquiries and collaborations, please email me at <a href="mailto:vaiaphraim@gmail.com">vaiaphraim@gmail.com</a>. You can also connect with me on <a href="https://x.com/VaiaVGM" target="_blank">X (Twitter)</a>, <a href="https://soundcloud.com/vaiavgm" target="_blank">SoundCloud</a>, and <a href="https://vaiavgm.bandcamp.com" target="_blank">Bandcamp</a>.</p>
+            </section>
+            <section id="services" class="services">
+                <h2>Services Offered</h2>
+                <p>I specialize in game music composition, particularly chiptune in the style of the NES and Genesis. Additionally, I am skilled in creating retro MIDI arrangements, and unique 1-bit music.</p>
+            </section>
+            <section id="cta" class="cta">
+                <h2>Hire Me</h2>
+                <p>Looking for captivating music for your game? Let's work together! Explore more of my work on <a href="https://vaiavgm.bandcamp.com" target="_blank">Bandcamp</a> or check out my music pack "<a href="https://vaiaman.itch.io/spoopy-music" target="_blank">Spoopy Music</a>" in collaboration with Harvey Carman.<br/>Those 500+ tracks, you want to see most of them in one place? The page will take a while to load, but <a href="https://compo.thasauce.net/profiles/view/Vaiaphraim">here they are!</a></p>
+            </section>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="social-links">
+            <a href="https://x.com/VaiaVGM" target="_blank">X (Twitter)</a>
+            <a href="https://vaiavgm.bandcamp.com" target="_blank">Bandcamp</a>
+            <a href="https://soundcloud.com/vaiavgm" target="_blank">SoundCloud</a>
+            <a href="https://github.com/vaiavgm" target="_blank">GitHub</a>
+        </div>
+        <p>&copy; 2024 Eduard Pranz. All rights reserved.</p>
+    </footer>
+</body>
 </html>

@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 70px; /* Adjust for fixed header height */
+  padding-bottom: 70px; /* Adjust for fixed footer height */
+}
+
+/* Main content container */
+.main-container {
+  max-width: 1400px; /* Maximum width for the content */
+  margin: 0 auto; /* Center the container */
+  padding: 0 1rem; /* Add some padding for smaller screens */
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+header .portrait {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header .logo {
+  height: 50px;
+  width: auto;
+}
+
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 1rem;
+}
+
+h2, h3 {
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.waveform {
+  margin: 1rem 0; /* Padding around waveform */
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Additional styling for sections */
+.bio, .portfolio, .services, .contact {
+  margin-bottom: 1rem;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Footer social links */
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0.5rem 0 0;
+}
+
+/* Sections styling */
+.bio, .services, .contact, .cta {
+  margin-bottom: 2rem;
+}
+
+/* Portfolio section */
+.portfolio h2 {
+  margin-bottom: 1rem;
+}
+
+.portfolio h3 {
+  padding: 1rem;
+  margin: 1.5rem 0 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* Add offset for fixed header */
+section[id] {
+  position: relative;
+  padding-top: 70px; /* Adjust to header height */
+  margin-top: -40px; /* Negative margin to offset the padding */
+}
+
+section[id]:before {
+  content: "";
+  display: block;
+  height: 70px; /* Adjust to header height */
+  margin-top: -40px; /* Negative margin to offset the height */
+}
+
+/* Header colors */
+.ost { background-color: #b9fbc0; } /* Soft teal for OST */
+.chiptune { background-color: #6a0d91; } /* Purple for Chiptune */
+.orchestral { background-color: #2a9d8f; } /* Soft pastel green for Orchestral */
+.dungeon-midi { background-color: #f39c12; } /* Orange for Dungeon MIDI */
+.one-bit { background-color: #9db1c8; } /* Bluish gray for 1-bit Music */
+.collaborations { background-color: #e63946; } /* Nintendo-red for Collaborations */
+
+/* Portfolio item styling */
+.portfolio-item {
+  flex: 1 1 calc(50% - 1rem);
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item h4 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+.portfolio-item p {
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+/* Play button styling */
+.play-btn {
+  background-color: #007bff; /* Blue color for the button */
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative; /* Needed for positioning of icons */
+  color: white; /* Icon color */
+  font-size: 24px; /* Size of the icons */
+}
+
+.play-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Show the play icon by default */
+.play-btn .play-icon {
+  display: block;
+}
+
+.play-btn .pause-icon {
+  display: none;
+}
+
+/* Icon styling */
+.play-icon, .pause-icon {
+  position: absolute; /* Position icons in the center of the button */
+  display: none; /* Initially hide all icons */
+}
+
+/* Show the pause icon when playing */
+.play-btn.playing .play-icon {
+  display: none;
+}
+
+.play-btn.playing .pause-icon {
+  display: block;
+}
+
+/* Adjust layout of portfolio items */
+.portfolio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.portfolio-item {
+  flex: 1 1 calc(50% - 1rem);
+  margin-bottom: 1rem;
+}
