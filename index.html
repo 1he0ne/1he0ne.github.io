@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
+
 </head>
 <body>
     <header>
@@ -258,157 +259,7 @@
                     </div>
                 </div>
             </section>
-            <script>
-                
-                const waveSurferInstances = {};
 
-                const createWaveSurfer = (containerId, trackUrl, waveColor, progressColor) => {
-                    return new Promise((resolve) => {
-                        const wavesurfer = WaveSurfer.create({
-                            container: containerId,
-                            waveColor: waveColor,
-                            progressColor: progressColor
-                        });
-                        wavesurfer.load(trackUrl);
-
-                        // Store the instance in the global object
-                        waveSurferInstances[containerId] = wavesurfer;
-
-                        wavesurfer.on('ready', () => {
-                            resolve(wavesurfer);
-                        });
-
-                        wavesurfer.on('finish', () => {
-                            const button = document.querySelector(`${containerId}-btn`);
-                            if (button) {
-                                button.classList.remove('playing');
-                            }
-                        });
-                    });
-                };
-
-                function togglePlayPause(button, wavesurfer) {
-                    if (wavesurfer.isPlaying()) {
-                        wavesurfer.pause();
-                        button.classList.remove('playing');
-                    } else {
-                        // Pause all other tracks
-                        Object.values(waveSurferInstances).forEach(otherWavesurfer => {
-                            if (otherWavesurfer !== wavesurfer && otherWavesurfer.isPlaying()) {
-                                otherWavesurfer.pause();
-
-                                // Find and update the corresponding button using the new button IDs
-                                const otherContainerId = Object.keys(waveSurferInstances).find(key => waveSurferInstances[key] === otherWavesurfer);
-                                const otherButton = document.querySelector(`${otherContainerId}-btn`);
-                                if (otherButton) {
-                                    otherButton.classList.remove('playing');
-                                }
-                            }
-                        });
-
-                        wavesurfer.play();
-                        button.classList.add('playing');
-                    }
-                }
-
-                // Add event listeners to buttons dynamically
-                document.querySelectorAll('.play-btn').forEach(button => {
-                    const waveformId = button.parentElement.querySelector('.waveform').id;
-                    button.id = `${waveformId}-btn`; // Set the button ID dynamically
-                    button.addEventListener('click', () => {
-                        const waveformId = button.parentElement.querySelector('.waveform').id;
-                        const wavesurfer = waveSurferInstances[`#${waveformId}`];
-                        if (wavesurfer) {
-                            togglePlayPause(button, wavesurfer);
-                        } else {
-                            console.error('WaveSurfer instance not found for', waveformId);
-                        }
-                    });
-                });
-
-
-                const waveformColorOrch = "#009d8a"
-                const progressColorOrch = "#007f6d"
-
-                const waveformColorChip = "#5a0a82"
-                const progressColorChip = "#4a0a66"
-
-                const waveformColorOST = waveformColorOrch
-                const progressColorOST = progressColorOrch
-
-                const waveformColorDMIDI = "#e38c12"
-                const progressColorDMIDI = "#c77a10"
-
-                const waveformColorBIT = "#8bb1c3"
-                const progressColorBIT = "#6a8aa8"
-
-                const waveformColorCollab = "#cf2a3d"
-                const progressColorCollab = "#b62836"
-
-                const loadWaveSurfers = async () => {
-                    await createWaveSurfer('#waveformChip3', 'assets/00-WarOfTheTitans.mp3', waveformColorChip, progressColorChip); // Chiptune
-                    await createWaveSurfer('#waveformChip1', 'assets/01-Kombinator.mp3', waveformColorChip, progressColorChip); // Chiptune
-                    // await createWaveSurfer('#waveformChip2', 'assets/ScratchTickets.mp3', waveformColorChip, progressColorChip); // Chiptune
-
-                    // await  createWaveSurfer('#waveformChip4', 'assets/Leeway.mp3', waveformColorChip, progressColorChip); // Chiptune
-                    // await createWaveSurfer('#waveformChip5', 'assets/Unfolding.mp3', waveformColorChip, progressColorChip); // Chiptune
-                    await createWaveSurfer('#waveformChip6', 'assets/02-Photon.mp3', waveformColorChip, progressColorChip); // Chiptune
-                    await createWaveSurfer('#waveformChip7', 'assets/03-TheHub.mp3', waveformColorChip, progressColorChip); // Chiptune
-
-
-                    await createWaveSurfer('#waveformDMIDI1', 'assets/TreasureHall.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
-                    await createWaveSurfer('#waveformDMIDI2', 'assets/Perseverance.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
-                    await createWaveSurfer('#waveformDMIDI3', 'assets/DesecratedHallows.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
-                    await createWaveSurfer('#waveformDMIDI4', 'assets/Daylight.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
-
-                    // await createWaveSurfer('#waveformBIT1', 'assets/Corruption.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
-                    // await createWaveSurfer('#waveformBIT2', 'assets/Mono.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
-                    // await createWaveSurfer('#waveformBIT3', 'assets/Flutter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
-                    await createWaveSurfer('#waveformBIT4', 'assets/Specter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
-                    await createWaveSurfer('#waveformBIT5', 'assets/HaloOn.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
-
-
-                    // await createWaveSurfer('#waveformOST1', 'assets/Danaide.mp3', waveformColorOST, progressColorOST); // OST
-                    // await createWaveSurfer('#waveformOST2', 'assets/Rainforest.mp3', waveformColorOST, progressColorOST); // OST
-                    // await createWaveSurfer('#waveformOST3', 'assets/SnowAndIce.mp3', waveformColorOST, progressColorOST); // OST
-
-                    await createWaveSurfer('#waveformOrch1', 'assets/Tanunia.mp3', waveformColorOrch, progressColorOrch); // Orchestral
-                    await createWaveSurfer('#waveformOrch2', 'assets/NightlyTreasureMischief.mp3', waveformColorOrch, progressColorOrch); // Orchestral
-
-                    await createWaveSurfer('#waveformCollab1', 'assets/SearchForLife.mp3', waveformColorCollab, progressColorCollab); // Collaborations
-                    await createWaveSurfer('#waveformCollab2', 'assets/FriendshipStrikesBack.mp3', waveformColorCollab, progressColorCollab); // Collaborations
-                    await createWaveSurfer('#waveformCollab3', 'assets/MemoryLane.mp3', waveformColorCollab, progressColorCollab); // Collaborations
-                }
-
-                loadWaveSurfers();
-
-                /*
-                function createPortfolioItem(title, description, waveformId, trackUrl, waveColor, progressColor) {
-                    const itemHTML = `
-                        <div class="portfolio-item">
-                            <h4>${title}</h4>
-                            <p>${description}</p>
-                            <div id="${waveformId}" class="waveform"></div>
-                            <button class="play-btn" onclick="togglePlayPause(this, ${waveformId})">
-                                <i class="fas fa-play play-icon"></i>
-                                <i class="fas fa-pause pause-icon"></i>
-                            </button>
-                        </div>
-                    `;
-
-                    // Insert the HTML into the DOM
-                    document.getElementById(waveformId).innerHTML = itemHTML;
-
-                    // Create and initialize the WaveSurfer instance
-                    const wavesurferInstance = createWaveSurfer(`#${waveformId}`, trackUrl, waveColor, progressColor);
-
-                    // Assign the created instance to a global variable
-                    window[waveformId.replace('waveform', 'wavesurfer')] = wavesurferInstance;
-
-                    return itemHTML;
-                }*/
-                </script>
-            </section>
             <section>
                 You scrolled all the way down and are still here? I'm glad!<br/>By the way, those 500+ tracks I mentioned above... you want to see most of them in one place? The page will take a while to load, but <a href="https://compo.thasauce.net/profiles/view/Vaiaphraim">here they are</a>!
                 <br/><br/>
@@ -416,7 +267,132 @@
         </div>
     </div>
 
+    <script>
+        const waveSurferInstances = {};
 
+        const waveformColorOrch = "#009d8a"
+        const progressColorOrch = "#007f6d"
+        
+        const waveformColorChip = "#5a0a82"
+        const progressColorChip = "#4a0a66"
+        
+        const waveformColorOST = waveformColorOrch
+        const progressColorOST = progressColorOrch
+        
+        const waveformColorDMIDI = "#e38c12"
+        const progressColorDMIDI = "#c77a10"
+        
+        const waveformColorBIT = "#8bb1c3"
+        const progressColorBIT = "#6a8aa8"
+        
+        const waveformColorCollab = "#cf2a3d"
+        const progressColorCollab = "#b62836"
+        
+        const createWaveSurfer = (containerId, trackUrl, waveColor, progressColor) => {
+            return new Promise((resolve) => {
+                const wavesurfer = WaveSurfer.create({
+                    container: containerId,
+                    waveColor: waveColor,
+                    progressColor: progressColor,
+                    url: trackUrl,
+                    height: 90
+                });
+        
+                // Store the instance in the global object
+                waveSurferInstances[containerId] = wavesurfer;
+        
+                wavesurfer.on('ready', () => {
+                    resolve(wavesurfer);
+                });
+        
+                wavesurfer.on('finish', () => {
+                    const button = document.querySelector(`${containerId}-btn`);
+                    if (button) {
+                        button.classList.remove('playing');
+                    }
+                });
+            });
+        };
+        
+        function togglePlayPause(button, wavesurfer) {
+            if (wavesurfer.isPlaying()) {
+                wavesurfer.pause();
+                button.classList.remove('playing');
+            } else {
+                // Pause all other tracks
+                Object.values(waveSurferInstances).forEach(otherWavesurfer => {
+                    if (otherWavesurfer !== wavesurfer && otherWavesurfer.isPlaying()) {
+                        otherWavesurfer.pause();
+        
+                        // Find and update the corresponding button using the new button IDs
+                        const otherContainerId = Object.keys(waveSurferInstances).find(key => waveSurferInstances[key] === otherWavesurfer);
+                        const otherButton = document.querySelector(`${otherContainerId}-btn`);
+                        if (otherButton) {
+                            otherButton.classList.remove('playing');
+                        }
+                    }
+                });
+        
+                wavesurfer.play();
+                button.classList.add('playing');
+            }
+        }
+        
+        // Add event listeners to buttons dynamically
+        document.querySelectorAll('.play-btn').forEach(button => {
+            const waveformId = button.parentElement.querySelector('.waveform').id;
+            button.id = `${waveformId}-btn`; // Set the button ID dynamically
+            button.addEventListener('click', () => {
+                const waveformId = button.parentElement.querySelector('.waveform').id;
+                const wavesurfer = waveSurferInstances[`#${waveformId}`];
+                if (wavesurfer) {
+                    togglePlayPause(button, wavesurfer);
+                } else {
+                    console.error('WaveSurfer instance not found for', waveformId);
+                }
+            });
+        });
+        
+        
+        const loadWaveSurfers = async () => {
+          await createWaveSurfer('#waveformChip3', 'assets/00-WarOfTheTitans.mp3', waveformColorChip, progressColorChip); // Chiptune
+          await createWaveSurfer('#waveformChip1', 'assets/01-Kombinator.mp3', waveformColorChip, progressColorChip); // Chiptune
+          // await createWaveSurfer('#waveformChip2', 'assets/ScratchTickets.mp3', waveformColorChip, progressColorChip); // Chiptune
+        
+          // await  createWaveSurfer('#waveformChip4', 'assets/Leeway.mp3', waveformColorChip, progressColorChip); // Chiptune
+          // await createWaveSurfer('#waveformChip5', 'assets/Unfolding.mp3', waveformColorChip, progressColorChip); // Chiptune
+          await createWaveSurfer('#waveformChip6', 'assets/02-Photon.mp3', waveformColorChip, progressColorChip); // Chiptune
+          await createWaveSurfer('#waveformChip7', 'assets/03-TheHub.mp3', waveformColorChip, progressColorChip); // Chiptune
+        
+        
+          await createWaveSurfer('#waveformDMIDI1', 'assets/TreasureHall.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+          await createWaveSurfer('#waveformDMIDI2', 'assets/Perseverance.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+          await createWaveSurfer('#waveformDMIDI3', 'assets/DesecratedHallows.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+          await createWaveSurfer('#waveformDMIDI4', 'assets/Daylight.mp3', waveformColorDMIDI, progressColorDMIDI); // Dungeon MIDI
+        
+          // await createWaveSurfer('#waveformBIT1', 'assets/Corruption.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+          // await createWaveSurfer('#waveformBIT2', 'assets/Mono.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+          // await createWaveSurfer('#waveformBIT3', 'assets/Flutter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+          await createWaveSurfer('#waveformBIT4', 'assets/Specter.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+          await createWaveSurfer('#waveformBIT5', 'assets/HaloOn.mp3', waveformColorBIT, progressColorBIT); // 1-bit Music
+        
+        
+          // await createWaveSurfer('#waveformOST1', 'assets/Danaide.mp3', waveformColorOST, progressColorOST); // OST
+          // await createWaveSurfer('#waveformOST2', 'assets/Rainforest.mp3', waveformColorOST, progressColorOST); // OST
+          // await createWaveSurfer('#waveformOST3', 'assets/SnowAndIce.mp3', waveformColorOST, progressColorOST); // OST
+        
+          await createWaveSurfer('#waveformOrch1', 'assets/Tanunia.mp3', waveformColorOrch, progressColorOrch); // Orchestral
+          await createWaveSurfer('#waveformOrch2', 'assets/NightlyTreasureMischief.mp3', waveformColorOrch, progressColorOrch); // Orchestral
+        
+          await createWaveSurfer('#waveformCollab1', 'assets/SearchForLife.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+          await createWaveSurfer('#waveformCollab2', 'assets/FriendshipStrikesBack.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+          await createWaveSurfer('#waveformCollab3', 'assets/MemoryLane.mp3', waveformColorCollab, progressColorCollab); // Collaborations
+        }
+        
+
+        loadWaveSurfers();
+
+    </script>
     
     <footer>
         <div class="social-links">

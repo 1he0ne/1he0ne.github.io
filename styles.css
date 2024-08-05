@@ -82,13 +82,20 @@ ul li {
 }
 
 .waveform {
-  margin: 0.75rem 0; /* Padding around waveform */
+  margin: 0.75rem auto; /* Center the container horizontally */
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
-  min-height: 90px;
+  height: 108px;
+  width: 100%; /* Ensure the container takes up full width of its parent */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
+.waveform > * {
+  display: block; /* Ensure children are displayed as block elements */
+}
+
 
 /* Additional styling for sections */
 .bio, .portfolio, .services, .contact {
